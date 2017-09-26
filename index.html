@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>预解释</title>
+    <script>
+        //不管条件成立不成立都进行预解释
+        //	if(!("num" in window)){
+        //		var num=12;
+        //	}
+        //	console.log(num);
+        //匿名函数之函数表达式,预解释只解释等号左边的
+        //	var fn=function(){
+        //		console.log("ok");
+        //	}
+        //	//自执行函数，不进行预解释
+        //	(function(num){
+        //		console.log(num);
+        //	})(100);
+
+        //	var fn=13;
+        //	function fn(){
+        //		console.log("123");
+        //	}
+        //	console.log(fn);
+        //	function fn(){
+        //		var i=10;
+        //		return function(n){
+        //			console.log(n+(++i));
+        //		}
+        //	}
+        //	var f=fn();
+        //	f(10);//-> 21
+        //	f(20);//-> 32
+        //	fn()(10);//-> 21
+        //	fn()(20);//->31
+        //	f(20);
+        //单例模式->解决了分组问题，但是不能实现批量生产
+        //工厂模式->批量生产->函数的封装->低耦合高内聚：减少页面中冗余代码，提高代码的重复利用率
+//        function createJsPerson(name,age){
+//            var obj={};
+//            obj.name=name;
+//            obj.age=age;
+//            obj.writeJs=function(){
+//                console.log("my name is"+this.name+",i can write js 啦~~");
+//            };
+//            return obj;
+//        }
+//        var p1=createJsPerson("张三","48");
+//        p1.writeJs();
+//
+//        var p2=createJsPerson("李四","16");
+//        p2.writeJs();
+        var t1=12;
+        var t2="12";
+        console.log(t1===t2);
+    </script>
+</head>
+
+<body>
+</body>
+</html>
